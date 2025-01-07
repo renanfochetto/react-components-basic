@@ -1,6 +1,6 @@
 import './Banner.css'
 
-function Banner() {
+export const Banner = () => {
     // JSX
     return (
         <header className="banner">
@@ -9,4 +9,5 @@ function Banner() {
     );
 }
 
-export default Banner;
+//Componente com exemplo de importação distinta, para ser utilizado em outros componentes e
+// com prevenção de escopo global facilitando o encapsulamento.
