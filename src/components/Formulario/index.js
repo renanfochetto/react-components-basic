@@ -6,16 +6,6 @@ import { useState } from "react";
 
 const Formulario = (props) => {
 
-    const times = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX & UI Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
-
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
@@ -29,7 +19,11 @@ const Formulario = (props) => {
             imagem,
             time
         })
-        }
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTimes('')
+    }
     return (
         <section className="formulario">
             <form onSubmit={aoSalvar}>
@@ -60,7 +54,7 @@ const Formulario = (props) => {
                 <ListaSuspensa
                     obrigatorio={true}
                     label="Time"
-                    itens={times}
+                    itens={props.times}
                     valor={time}
                     aoAlterado={valor => setTimes(valor)}
                 />
